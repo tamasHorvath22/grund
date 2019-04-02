@@ -1,0 +1,24 @@
+<mat-card class="card mat-elevation-z2">
+    <div class="label">
+        <label for="newActor">Kérem a színészek nevét!</label>
+    </div>
+      <input
+          class="input"
+          type="text"
+          name="newActor" 
+          [(ngModel)]="newActor"
+          (keydown)="onPressEnter($event)">
+
+    <div *ngIf="actorList.length > 0">
+        <div *ngFor="let actor of actorList">
+            <div class="actorName">
+                {{ actor.name }}
+            </div>
+            <div (click)="deleteActor(actor.name)" class="iconWrap">
+                <fa-icon icon="minus" class="icon"></fa-icon>
+            </div>
+        </div>
+    </div>
+
+    <button (click)="onPressStart()">Start</button>
+</mat-card>

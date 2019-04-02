@@ -1,0 +1,9 @@
+<app-create-game
+    *ngIf="currentComponent === maestroComponents.SETUP"
+    (changeComponent)="setComponent($event)">
+</app-create-game>
+
+<app-game
+    *ngIf="currentComponent === maestroComponents.GAME"
+    (changeComponent)="setComponent($event)">
+</app-game>
